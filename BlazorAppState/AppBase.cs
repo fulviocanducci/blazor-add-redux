@@ -3,7 +3,6 @@ using BlazorState.Features.Routing;
 using BlazorState.Pipeline.ReduxDevTools;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
-//https://timewarpengineering.github.io/blazor-state/Tutorial.html
 namespace BlazorAppState
 {
     public class AppBase: ComponentBase
@@ -18,3 +17,4 @@ namespace BlazorAppState
         }
     }
 }
+//https://timewarpengineering.github.io/blazor-state/Tutorial.html
