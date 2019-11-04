@@ -2,7 +2,6 @@
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
-
 namespace BlazorAppState.States
 {
     public class CounterState: State<CounterState>
