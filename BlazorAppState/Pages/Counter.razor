@@ -1,0 +1,51 @@
+﻿@page "/counter"
+@using BlazorState
+@using BlazorAppState.States
+@inherits BlazorStateComponent
+
+<h1>Counter</h1>
+<p>Current state: @currentStateCounter</p>
+
+<button class="btn btn-primary" @onclick="@IncrementCountState">+</button>
+<button class="btn btn-primary" @onclick="@DecrementCountState">-</button>
+
+@code {
+
+    CounterState CounterState => GetState<CounterState>();
+
+    private int currentStateCounter
+    {
+        get
+        {
+            return CounterState.Count;
+        }
+    }    
+
+    void IncrementCountState()
+    {
+        Mediator.Send(new CounterState.IncrementCountAction());
+    }
+
+    void DecrementCountState()
+    {
+        Mediator.Send(new CounterState.DecrementCountAction());
+    }
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+}
+
+@*
+    - https://timewarpengineering.github.io/blazor-state/Tutorial.html
+
+    - https://www.nuget.org/packages/ReduxSharp/
+
+    - https://www.nuget.org/packages/Blazor-Redux/ *
+
+    //Problem Compatible
+    - https://www.nuget.org/packages/Blazor.Realm/  :: https://github.com/dworthen/BlazorRealm *
+    - https://www.nuget.org/packages/Blazor.Realm.ReduxDevTools/
+*@
